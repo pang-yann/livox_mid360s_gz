@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 pang-yann
+# SPDX-License-Identifier: Apache-2.0
+
 version = 1
 SPDX-PackageName = "livox_mid360s_gz"
 SPDX-PackageSupplier = "pang-yann <78251599+pang-yann@users.noreply.github.com>"

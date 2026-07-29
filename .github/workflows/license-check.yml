@@ -19,6 +19,3 @@ jobs:
 
       - name: Check REUSE compliance
         uses: fsfe/reuse-action@v4
-        with:
-          args: --verbose
-
