@@ -59,7 +59,7 @@ install(
   RUNTIME DESTINATION bin
 )
 install(DIRECTORY include/ DESTINATION include)
-install(DIRECTORY launch models scan_patterns worlds
+install(DIRECTORY launch scan_patterns urdf meshes demos
   DESTINATION share/${PROJECT_NAME}
 )
 install(FILES README.md LICENSE DESTINATION share/${PROJECT_NAME})

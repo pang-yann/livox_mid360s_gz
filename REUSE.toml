@@ -12,15 +12,15 @@ path = ".github/**"
 SPDX-FileCopyrightText = "2026 pang-yann"
 SPDX-License-Identifier = "Apache-2.0"
 
-# 3D models and configuration
+# Demo files
 [[annotations]]
-path = "models/**"
+path = "demos/**"
 SPDX-FileCopyrightText = "2026 pang-yann"
 SPDX-License-Identifier = "Apache-2.0"
 
-# World simulation files
+# Mesh data
 [[annotations]]
-path = "worlds/**"
+path = "meshes/*"
 SPDX-FileCopyrightText = "2026 pang-yann"
 SPDX-License-Identifier = "Apache-2.0"
 

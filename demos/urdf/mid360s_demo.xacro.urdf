@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="mid360s_demo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find livox_mid360s_gz)/urdf/mid360s.xacro" />
+
+    <link name="base_link"/>
+
+    <xacro:mid360s parent="base_link" gz_sensor_topic_ns="/livox/mid360" horizontal_samples="1440" vertical_samples="80">
+        <origin xyz="0 0 0.3" rpy="${90*DEG2RAD} 0 0" />
+    </xacro:mid360s>
+
+</robot>

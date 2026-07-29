@@ -1,0 +1,96 @@
+<!-- 
+SPDX-License-Identifier: Apache-2.0
+SPDX-FileCopyrightText: 2026 pang-yann
+-->
+<?xml version="1.0"?>
+<robot name="mid360s" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="package_name" value="livox_mid360s_gz" />
+    <xacro:property name="DEG2RAD" value="${pi/180.0}" />
+    <xacro:macro name="mid360s"
+        params="
+        parent 
+        prefix='' 
+        gz_sensor_topic_ns='sensors/lidar/default'
+        horizontal_samples=1440
+        vertical_samples=251
+        *origin
+        ">
+        <joint name="to_${prefix}lidar_link" type="fixed">
+            <parent link="${parent}" />
+            <child link="${prefix}lidar_link" />
+            <xacro:insert_block name="origin" />
+        </joint>
+        <link name="${prefix}lidar_link">
+            <!-- Placeholder inertia -->
+            <inertial>
+                <mass value="0.01" />
+                <inertia ixx="1e-6" ixy="0" ixz="0"
+                    iyy="1e-6" iyz="0" izz="1e-6" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh
+                        filename="package://livox_mid360s_gz/meshes/mid360s.obj"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh
+                        filename="package://livox_mid360s_gz/meshes/mid360s.obj"/>
+                </geometry>
+            </collision>
+        </link>
+        <joint name="to_${prefix}lidar_optical_link" type="fixed">
+            <parent link="${prefix}lidar_link" />
+            <child link="${prefix}lidar_optical_link" />
+            <origin xyz="0 0.012682 0" rpy="${-90*DEG2RAD} ${-180*DEG2RAD} 0" />
+        </joint>
+        <link name="${prefix}lidar_optical_link" />
+        <gazebo reference="${prefix}lidar_optical_link">
+            <sensor name="${prefix}gpu_lidar_sensor" type="gpu_lidar">
+                <always_on>1</always_on>
+                <update_rate>10</update_rate>
+                <visualize>false</visualize>
+                <gz_frame_id>${prefix}lidar_optical_link</gz_frame_id>
+                <!-- gpu_lidar will suffix /points -->
+                <topic>${gz_sensor_topic_ns}/raw</topic>
+                <lidar>
+                    <scan>
+                        <horizontal>
+                            <samples>${horizontal_samples}</samples>
+                            <resolution>1</resolution>
+                            <min_angle>${-180*DEG2RAD}</min_angle>
+                            <max_angle>${180*DEG2RAD}</max_angle>
+                        </horizontal>
+                        <vertical>
+                            <samples>${vertical_samples}</samples>
+                            <resolution>1</resolution>
+                            <min_angle>${-7.22*DEG2RAD}</min_angle>
+                            <max_angle>${55.2*DEG2RAD}</max_angle>
+                        </vertical>
+                    </scan>
+                    <range>
+                        <min>0.1</min>
+                        <max>40.0</max>
+                        <resolution>0.01</resolution>
+                    </range>
+                </lidar>
+            </sensor>
+        </gazebo>
+        <gazebo>
+            <plugin filename="liblivox_mid360s_gz_system.so"
+                name="livox_mid360s_gz::LivoxMid360sSystem">
+                <input_topic>${gz_sensor_topic_ns}/raw/points</input_topic>
+                <output_topic>${gz_sensor_topic_ns}/points</output_topic>
+                <scan_rate>10</scan_rate>
+                <point_rate>200000</point_rate>
+                <horizontal_min>${-180*DEG2RAD}</horizontal_min>
+                <horizontal_max>${180*DEG2RAD}</horizontal_max>
+                <vertical_min>${-7.22*DEG2RAD}</vertical_min>
+                <vertical_max>${55.2*DEG2RAD}</vertical_max>
+            </plugin>
+        </gazebo>
+    </xacro:macro>
+</robot>
