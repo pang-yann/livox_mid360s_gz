@@ -1,0 +1,28 @@
+version = 1
+SPDX-PackageName = "livox_mid360s_gz"
+SPDX-PackageSupplier = "pang-yann <78251599+pang-yann@users.noreply.github.com>"
+SPDX-PackageDownloadLocation = "https://github.com/pang-yann/livox_mid360s_gz"
+
+# GitHub workflows
+[[annotations]]
+path = ".github/**"
+SPDX-FileCopyrightText = "2026 pang-yann"
+SPDX-License-Identifier = "Apache-2.0"
+
+# 3D models and configuration
+[[annotations]]
+path = "models/**"
+SPDX-FileCopyrightText = "2026 pang-yann"
+SPDX-License-Identifier = "Apache-2.0"
+
+# World simulation files
+[[annotations]]
+path = "worlds/**"
+SPDX-FileCopyrightText = "2026 pang-yann"
+SPDX-License-Identifier = "Apache-2.0"
+
+# External Livox scan pattern data (MIT licensed)
+[[annotations]]
+path = "scan_patterns/**"
+SPDX-FileCopyrightText = "2021 livox"
+SPDX-License-Identifier = "MIT"

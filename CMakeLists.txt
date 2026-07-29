@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 pang-yann
+
 cmake_minimum_required(VERSION 3.16)
 project(livox_mid360s_gz)
 

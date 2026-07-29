@@ -1,3 +1,8 @@
+<!-- 
+SPDX-License-Identifier: Apache-2.0
+SPDX-FileCopyrightText: 2026 pang-yann 
+-->
+
 # Livox Mid-360 Gazebo Sim plugin
 
 GPU-accelerated Livox Mid-360 approximation for ROS 2 Jazzy and Gazebo
@@ -78,6 +83,8 @@ Plugin bounds must match the `gpu_lidar` SDF bounds.
 ## Attribution
 
 `scan_patterns/mid360.csv` comes from
-`Livox-SDK/livox_laser_simulation`, licensed under MIT. The original file is
+[Livox-SDK/livox_laser_simulation](https://github.com/Livox-SDK/livox_laser_simulation) licensed under MIT. The original file is
 kept unchanged; frame correction is applied at runtime with
 `azimuth_offset`.
+
+Referenced implementations against [LCAS/livox_laser_simulation_ros2](https://github.com/LCAS/livox_laser_simulation_ros2/blob/main/LICENSE)

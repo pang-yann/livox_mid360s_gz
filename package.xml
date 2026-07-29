@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- SPDX-FileCopyrightText: 2026 pang-yann -->
 <package format="3">
   <name>livox_mid360s_gz</name>
   <version>0.1.0</version>
