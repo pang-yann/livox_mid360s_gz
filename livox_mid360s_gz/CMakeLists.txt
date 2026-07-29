@@ -59,10 +59,10 @@ install(
   RUNTIME DESTINATION bin
 )
 install(DIRECTORY include/ DESTINATION include)
-install(DIRECTORY launch scan_patterns urdf meshes demos
+install(DIRECTORY scan_patterns
   DESTINATION share/${PROJECT_NAME}
 )
-install(FILES README.md LICENSE DESTINATION share/${PROJECT_NAME})
+install(FILES ../README.md ../LICENSE DESTINATION share/${PROJECT_NAME})
 
 ament_export_targets(export_livox_mid360s_gz HAS_LIBRARY_TARGET)
 ament_export_dependencies(gz_msgs_vendor gz-msgs10)

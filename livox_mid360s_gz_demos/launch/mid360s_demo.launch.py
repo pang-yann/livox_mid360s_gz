@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: 2026 pang-yann
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -30,13 +30,13 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     package_share = Path(
-        get_package_share_directory('livox_mid360s_gz')
+        get_package_share_directory('livox_mid360s_gz_demos')
     )
     ros_gz_share = Path(get_package_share_directory('ros_gz_sim'))
-    world = package_share / 'demos' / 'worlds' / 'mid360s_demo.sdf'
-    xacro_file = package_share / 'demos' / 'urdf' / 'mid360s_demo.xacro.urdf'
-    bridge_config = package_share / 'demos' / 'config' / 'mid360s_demo.yaml'
-    rviz_config = package_share / 'demos' / 'config' / 'demo.rviz'
+    world = package_share / 'worlds' / 'mid360s_demo.sdf'
+    xacro_file = package_share / 'urdf' / 'mid360s_demo.xacro.urdf'
+    bridge_config = package_share / 'config' / 'mid360s_demo.yaml'
+    rviz_config = package_share / 'config' / 'demo.rviz'
     gazebo_resource_path = SetEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
         value=[

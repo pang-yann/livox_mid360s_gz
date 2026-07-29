@@ -1,10 +1,10 @@
-<!-- 
+<?xml version="1.0"?>
+<!--
 SPDX-License-Identifier: Apache-2.0
 SPDX-FileCopyrightText: 2026 pang-yann
 -->
-<?xml version="1.0"?>
 <robot name="mid360s" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:property name="package_name" value="livox_mid360s_gz" />
+    <xacro:property name="package_name" value="livox_mid360s_gz_demos" />
     <xacro:property name="DEG2RAD" value="${pi/180.0}" />
     <xacro:macro name="mid360s"
         params="
@@ -31,14 +31,14 @@ SPDX-FileCopyrightText: 2026 pang-yann
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
                     <mesh
-                        filename="package://livox_mid360s_gz/meshes/mid360s.obj"/>
+                        filename="package://livox_mid360s_gz_demos/meshes/mid360s.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
                     <mesh
-                        filename="package://livox_mid360s_gz/meshes/mid360s.obj"/>
+                        filename="package://livox_mid360s_gz_demos/meshes/mid360s.obj"/>
                 </geometry>
             </collision>
         </link>

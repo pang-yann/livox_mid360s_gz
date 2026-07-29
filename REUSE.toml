@@ -12,20 +12,13 @@ path = ".github/**"
 SPDX-FileCopyrightText = "2026 pang-yann"
 SPDX-License-Identifier = "Apache-2.0"
 
-# Demo files
-[[annotations]]
-path = "demos/**"
-SPDX-FileCopyrightText = "2026 pang-yann"
-SPDX-License-Identifier = "Apache-2.0"
-
-# Mesh data
-[[annotations]]
-path = "meshes/*"
-SPDX-FileCopyrightText = "2026 pang-yann"
-SPDX-License-Identifier = "Apache-2.0"
-
 # External Livox scan pattern data (MIT licensed)
 [[annotations]]
-path = "scan_patterns/**"
+path = "livox_mid360s_gz/scan_patterns/**"
 SPDX-FileCopyrightText = "2021 livox"
 SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "livox_mid360s_gz_demos/**"
+SPDX-FileCopyrightText = "2026 pang-yann"
+SPDX-License-Identifier = "Apache-2.0"

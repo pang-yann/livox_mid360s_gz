@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="mid360s_demo" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find livox_mid360s_gz)/urdf/mid360s.xacro" />
+    <xacro:include filename="$(find livox_mid360s_gz_demos)/urdf/mid360s.xacro" />
 
     <link name="base_link"/>
 

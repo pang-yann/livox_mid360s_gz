@@ -17,7 +17,6 @@ The result is an approximation: it cannot recover detail absent from the raw
 
 - ROS 2 Jazzy
 - Gazebo Harmonic
-- `ros_gz_sim` and `ros_gz_bridge`
 - `colcon`
 
 ### MID360 reference specifications
@@ -41,10 +40,18 @@ colcon build --packages-select livox_mid360s_gz
 source install/setup.bash
 ```
 
-## Demo
+## Optional demo
+
+The simulator demo is provided by the separate `livox_mid360s_gz_demos`
+package. Build it when ROS/Gazebo/RViz demo dependencies are available:
 
 ```bash
-ros2 launch livox_mid360s_gz mid360s_demo.launch.py
+colcon build --packages-select livox_mid360s_gz livox_mid360s_gz_demos
+source install/setup.bash
+```
+
+```bash
+ros2 launch livox_mid360s_gz_demos mid360s_demo.launch.py
 ```
 
 Inspect the sampled output with:
